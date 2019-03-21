@@ -1,81 +1,132 @@
+/**
+ * @file control.h
+ * @author Oskar Johansson (oskar@irisnet.se)
+ * @brief 
+ * This is a quite big control-file. The thought about it is to make it easier to 
+ * use later on.  
+ * @version 0.1
+ * @date 2019-03-21
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
+
 #ifndef CONTROL_H
 #define CONTROL_H
-
 #include <Arduino.h>
 #include <config.h>
 
 /**
- * Setups the brake with all neccesary pins.
+ * @brief 
+ * This will setup the neccesary pins. 
+ * Also send a message if connected to Serial. 
  */
 void setupBrake();
 
 /**
- * Setups 
+ * @brief 
+ * To be used in combination with @setupBrake
+ * This will setup the pins that are used. 
+ * 
  */
 void setupPin();
 
 /**
+ * @brief 
+ * Reads input and set controlsignal to dyno. 
  * 
  */
 void updateBrake();
 
 /**
- * Sets the amount of power to brake
- * 0 - 255
+ * @brief Set the Brake object
+ * Sets the control signal
+ * @param power - how much brake 0 - 255
  */
 void setBrake(int power);
 
 /**
- * Stops the brake by set
- * output to 0
+ * @brief 
+ * Stops the dyno. 
  */
 void stopBrake();
 
 /**
- * Returnsm2 how much brakepower 
- * inputs requers
- * from POT/PWM/Serial depending
- * on setup
+ * @brief 
+ * Read input to 
+ * @return int 
  */
 int getBrakePower();
 
 /**
- * Reads input
+ * @brief 
+ * 
+ * @return int 
  */
 int readInput();
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
 int controlFromSerial();
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
 int controlFromAuto();
 
+/**
+ * @brief 
+ * 
+ * @return String 
+ */
 String readSerial();
 
+/**
+ * @brief 
+ * 
+ */
 void checkControlMode();
 
+/**
+ * @brief 
+ * 
+ * @param cmd 
+ */
 void checkControlMode(String cmd);
 
-
+/**
+ * @brief 
+ * Control from serial. 
+ * @return int 
+ */
 int controlFromExternal();
 
 /**
- * Controls from manual input
- * in this case an potentiometer
+ * @brief 
+ * Control dyno manual. Now by using a potentiometer 
+ * 
+ * @return int, the value of how much the controlsignal to brake 
+ * should be
  */
 int controlFromManual();
 
 /**
- * Call this to show 
- * init message with
- * info about the system
+ * @brief 
+ * This will show an message about the software 
  */
 void initMessage();
 
-
 /**
- * DEBUG INFO
+ * @brief 
  * Info about everything you need to know about 
  * the system. Pins, current output, current input
  */
+
 void debugMessage();
 
 #endif

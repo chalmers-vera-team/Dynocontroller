@@ -1,11 +1,19 @@
+/**
+ * @file control.cpp
+ * @author Oskar Johansson (oskar@irisnet.se)
+ * @brief 
+ * Controls the brake. 
+ * @version 0.1
+ * @date 2019-03-21
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #include <control.h>
 
-int controlMode;
+int controlMode = 0;
 int lastOutput = 0; 
-/**
- * Setup all pins 
- * also see which mode is to be used
- */
+
 
 void setupBrake()
 {
@@ -95,20 +103,15 @@ int controlFromManual()
   return ((analogRead(pinBrakeControlManualInput)) >> 2);
 }
 
-/**
- * Setup the neccesary digital pins
- */
+
 void setupPin()
 {
   pinMode(pinBrakeControlOutput, OUTPUT);
   pinMode(pinBrakeModeSwitchInput, INPUT);
+  
 }
 
-/**
- * DEBUG INFO
- * Info about everything you need to know about 
- * the system. Pins, current output, current input
- */
+
 void debugMessage()
 {
   Serial.println("DEBUG INFO");

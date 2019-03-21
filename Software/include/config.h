@@ -1,7 +1,17 @@
+/**
+ * @file config.h
+ * @author Oskar Johansson (oskar@irisnet.se)
+ * @brief 
+ * @version 0.1
+ * @date 2019-03-21
+ * 
+ * @copyright Copyright (c) 2019
+ * 
+ */
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define VERSIONDATE 20190227
+#define VERSIONDATE 20190321
 
 /**
  * SETUP 
@@ -50,6 +60,7 @@
 
 //  Analog pin for current measure
 #define pinBrakeCurrentMeasure 0
+
 
 /**
  * For PID regulation.
