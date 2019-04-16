@@ -7,4 +7,5 @@ void setup() {
 
 void loop() {
   controlBrake(readInput());
+  //information();
 }

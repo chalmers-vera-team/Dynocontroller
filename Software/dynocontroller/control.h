@@ -1,5 +1,6 @@
 #ifndef CONTROL_H
 #define CONTROL_H
+#include <Arduino.h>
 
 
 // Setup all neccesary pins
@@ -19,6 +20,7 @@ int readInput();
 // Set the power to brake 0 - 255
 void controlBrake(int power); 
 
-
+// Write out some information to serial 
+void information();
 
 #endif
