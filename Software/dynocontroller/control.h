@@ -11,6 +11,7 @@ int readMode();
 
 // Reads the input
 // knows if in manual or auto mode
+// Return 0 - 255
 int readInput(); 
 
 // Set the power to brake 0 - 255
