@@ -2,6 +2,8 @@
 #define CONTROL_H
 
 
+// Setup all neccesary pins
+void setupPins(); 
 
 // reads which mode
 // 1 - auto

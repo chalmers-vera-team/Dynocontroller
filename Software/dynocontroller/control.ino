@@ -1,6 +1,14 @@
 #include "config.h"
 #include "control.h"
 
+void setupPins() {
+  pinMode(PIN_BRAKECONTROL, OUTPUT);
+  pinMode(PIN_CONTROLAUTOINPUT,INPUT);
+  pinMode(PIN_CONTROLMANUALINPUT, INPUT);
+  pinMode(PIN_CONTROLMODEINPUT, INPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+}
+
 
 int readMode() {
   return digitalRead(PIN_CONTROLMODEINPUT);
